@@ -48,6 +48,34 @@ const Projects = () => {
             image: Chronosphere,
             technologies: [UnityImage, CSharpImage],
             demoLink: 'https://bissmark.github.io/chronosphere-webgl/'
+        },
+        {
+            title: 'To-Do List',
+            description: ['Create draggable categories for your To-Do Lists and then add Tasks to those categories', 'Have a priority / time cross where you can visually see what categories of tasks are more pressing to do than others'],
+            image: '',
+            technologies: [HTMLImage, CSSImage, ReactImage, NodeImage, MongoDBImage],
+            demoLink: 'https://school-notes-backend.onrender.com/'
+        },
+        {
+            title: 'Bananagrams',
+            description: ['Fast and frantic word game where you are trying to create words using tiles (Similar to Scrabble)', 'You can peel: Whenever a player uses the last of their tiles, everyone gets another tile, dump: where you can throw away 1 tile for 3 more', 'And when you end the game and think that all your words are correct you can call Bananas which will get a Dictionary API to check if your words work'],
+            image: '',
+            technologies: [HTMLImage, CSSImage, JSImage],
+            demoLink: 'https://bissmark.github.io/BananaGramsSinglePlayer/'
+        },
+        {
+            title: 'Escape Room',
+            description: ['Play intricate escape rooms using user created puzzles', 'Implement different visual locks and have each puzzle link to the next to create modular escape rooms where each room can be different than the last'],
+            image: '',
+            technologies: [HTMLImage, CSSImage, JSImage, PythonImage, DjangoImage, TailwindImage, PostgresqlImage],
+            demoLink: 'https://escaperoom-gaxe.onrender.com/'
+        },
+        {
+            title: 'Ceege Books',
+            description: ['A book checking website to see what books that you own you have read or notRead', 'Users can also see other reviews and add their own'],
+            image: '',
+            technologies: [HTMLImage, CSSImage, JSImage, MongoDBImage, NodeImage, ExpressImage, EJSImage, TailwindImage],
+            demoLink: 'https://ceegebooks.firebaseapp.com/'
         }
     ];
 

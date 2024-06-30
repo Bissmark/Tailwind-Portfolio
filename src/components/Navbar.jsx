@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BiSolidContact } from "react-icons/bi";
 
 const Navbar = () => {
     const cvUrl = "https://drive.google.com/file/d/1bIbdws2teR3J3Irs3hAcUjwbQxL8zS8m/view?usp=sharing"
