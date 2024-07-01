@@ -13,8 +13,17 @@ import ReactImage from '../images/React.png';
 import FirebaseImage from '../images/Firebase.png';
 import MUIImage from '../images/MaterialUI.png';
 import Chronosphere from '../images/Chronosphere.png';
+import DjangoImage from '../images/Django.png';
+import TailwindImage from '../images/Tailwind.png';
+import ExpressImage from '../images/Express.webp';
+import MongoDBImage from '../images/MongoDB.png';
+import ToDoList from '../images/To-Do-List.png';
+import Banagrams from '../images/Bananagrams.png';
+import PythonImage from '../images/Python.png';
+import EscapeRoom from '../images/Escape-Room.png';
+import BookSaver from '../images/BookSaver.png';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,56 +35,64 @@ const Projects = () => {
             description: ['A crypto pricing webiste watching over the top 100 coins in realtime', 'Graphs showing the rise and fall of the coins over the last 24 hours', 'Add your favourite coins to your profile and play a mini investment game to see how much you would gain over a period of 24 hours'],
             image: CryptoImage,
             technologies: [HTMLImage, CSSImage, JSImage, ReactImage, FirebaseImage, MUIImage],
-            demoLink: 'https://ceegecrypto.firebaseapp.com/'
+            demoLink: 'https://ceegecrypto.firebaseapp.com/',
+            repoLink: 'https://github.com/Bissmark/Crypto-Page'
         },
         {
             title: 'GeoWhere',
             description: ['A Google Maps streetview location guessing game', '5 rounds of placing a marker where you think you are in the world and then getting points based on how close you were to the correct answer'],
             image: GeoWhereImage,
             technologies: [HTMLImage, CSSImage, JSImage, ReactImage, SupabaseImage],
-            demoLink: 'https://geowhere.netlify.app/'
+            demoLink: 'https://geowhere.netlify.app/',
+            repoLink: 'https://github.com/Bissmark/GeoWhere-Testing'
         },
         {
             title: 'Pokemon Party Planner',
             description: ['A Pokemon pokedex comprising of Generation 1 pokemon and moves', 'Allows a user to build a party of 6 pokemon selecting from the given pokedex'],
             image: PokemonImage,
             technologies: [HTMLImage, CSSImage, RubyImage, PostgresqlImage],
-            demoLink: ''
+            demoLink: '',
+            repoLink: 'https://github.com/Bissmark/PokePlanner'
         },
         {
             title: 'Chronosphere',
             description: ['A ball platformer game where the aim is to traverse through an obstacle course to make your way to the end', 'Dodge spikes, teleport around the field, jump onto platforms and reach the time gate without falling off the course', 'Built in 48 hours during a weekend GameJam with myself and 2 friends'],
             image: Chronosphere,
             technologies: [UnityImage, CSharpImage],
-            demoLink: 'https://bissmark.github.io/chronosphere-webgl/'
+            demoLink: 'https://bissmark.github.io/chronosphere-webgl/',
+            repoLink: 'https://github.com/Bissmark/chronosphere-webgl'
         },
         {
             title: 'To-Do List',
             description: ['Create draggable categories for your To-Do Lists and then add Tasks to those categories', 'Have a priority / time cross where you can visually see what categories of tasks are more pressing to do than others'],
-            image: '',
-            technologies: [HTMLImage, CSSImage, ReactImage, NodeImage, MongoDBImage],
-            demoLink: 'https://school-notes-backend.onrender.com/'
+            image: ToDoList,
+            technologies: [HTMLImage, CSSImage, ReactImage, ExpressImage, MongoDBImage],
+            demoLink: 'https://school-notes-backend.onrender.com/',
+            repoLink: 'https://github.com/Bissmark/School-Notes-V2'
         },
         {
             title: 'Bananagrams',
             description: ['Fast and frantic word game where you are trying to create words using tiles (Similar to Scrabble)', 'You can peel: Whenever a player uses the last of their tiles, everyone gets another tile, dump: where you can throw away 1 tile for 3 more', 'And when you end the game and think that all your words are correct you can call Bananas which will get a Dictionary API to check if your words work'],
-            image: '',
+            image: Banagrams,
             technologies: [HTMLImage, CSSImage, JSImage],
-            demoLink: 'https://bissmark.github.io/BananaGramsSinglePlayer/'
+            demoLink: 'https://bissmark.github.io/BananaGramsSinglePlayer/',
+            repoLink: 'https://github.com/Bissmark/Bananagram'
         },
         {
             title: 'Escape Room',
             description: ['Play intricate escape rooms using user created puzzles', 'Implement different visual locks and have each puzzle link to the next to create modular escape rooms where each room can be different than the last'],
-            image: '',
+            image: EscapeRoom,
             technologies: [HTMLImage, CSSImage, JSImage, PythonImage, DjangoImage, TailwindImage, PostgresqlImage],
-            demoLink: 'https://escaperoom-gaxe.onrender.com/'
+            demoLink: 'https://escaperoom-gaxe.onrender.com/',
+            repoLink: 'https://github.com/Bissmark/escape-room'
         },
         {
             title: 'Ceege Books',
             description: ['A book checking website to see what books that you own you have read or notRead', 'Users can also see other reviews and add their own'],
-            image: '',
-            technologies: [HTMLImage, CSSImage, JSImage, MongoDBImage, NodeImage, ExpressImage, EJSImage, TailwindImage],
-            demoLink: 'https://ceegebooks.firebaseapp.com/'
+            image: BookSaver,
+            technologies: [HTMLImage, CSSImage, JSImage, MongoDBImage, ExpressImage, TailwindImage],
+            demoLink: 'https://fantasy-books.onrender.com/',
+            repoLink: 'https://github.com/Bissmark/fantasy-books-2'
         }
     ];
 
@@ -87,7 +104,7 @@ const Projects = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
     }
 
-    const { title, description, image, technologies, demoLink } = projects[currentIndex];
+    const { title, description, image, technologies, demoLink, repoLink } = projects[currentIndex];
 
     return loading ? (
         <div className="flex items-center justify-center w-56 h-56 rounded-lg mx-auto">
@@ -105,10 +122,12 @@ const Projects = () => {
                     {description.map((desc, index) => (
                         <li key={index}>{desc}</li>
                     ))}
-                    <img className='w-1/3 mb-5 mt-5' src={image} alt={title} />
+                    <Link to={repoLink} className='w-1/3 mb-5 mt-5'>
+                        <img className='mx-auto' src={image} alt={title} />
+                    </Link>
                     <div className="flex flex-row h-8 justify-center mb-5">
                         {technologies.map((tech, index) => (
-                            <img key={index} src={tech} alt="" />
+                            <img className='mr-2' key={index} src={tech} alt="" />
                         ))}
                     </div>
                     <button className='bg-blue-600 rounded-sm px-3 py-1 mb-5'>
