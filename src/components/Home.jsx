@@ -9,8 +9,7 @@ const Home = () => {
                 <p className="w-4/6 mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, tempore nulla nesciunt dignissimos mollitia minus explicabo asperiores atque nihil eos excepturi quod, perspiciatis vero hic debitis laboriosam deleniti animi velit.</p>
 
                 <div className="mb-5">
-                    <Link to='/' className="text-gray-900 py-2 px-9 text-2xl rounded-lg border-blue-400 inline-flex bg-green-400 mr-10 hover:text-white" >Hire Me</Link>
-                    <Link to='/' className="text-gray-900 py-2 px-9 text-2xl rounded-lg bg-green-400 inline-flex hover:text-white" >Let's Talk</Link>  
+                    <Link to='/contact' className="text-gray-900 py-2 px-9 text-2xl rounded-lg bg-green-400 inline-flex hover:text-white" >Let's Talk</Link>  
                 </div>
                 
                 <div className="mt-10">
